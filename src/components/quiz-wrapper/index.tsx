@@ -3,8 +3,8 @@ import { QuizList } from "../quiz-list"
 
 export const QuizMenu =  () => {
   return (
-        <div className="w-96 flex bg-primary-purple text-center flex-col pt-8 space-y-2 h-fit rounded-xl">
-           <div className="pt-8">
+        <div className="w-fit h-fit md:w-96 flex bg-primary-purple text-center flex-col pt-8 space-y-2 xl:h-1/2 rounded-xl">
+           <div className="p-4 xl:p-8">
             <span className="text-white text-3xl">Список квизов✍️</span>
             </div>
           <div className="">
