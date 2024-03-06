@@ -40,6 +40,12 @@ export const QuizDB : Array<IQuiz> = [
                 answers: ['Язык программирования', 'Язык гипер-разметки', 'Таблица каскадных стилей'],
                 correct: 0
             },
+            {
+                id: 1,
+                question_title: 'Че такое прототип',
+                answers: ['Один', 'Два', 'Правильно'],
+                correct: 2
+            },
 
         ]
 
