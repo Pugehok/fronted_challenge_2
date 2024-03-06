@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import { useSpring, animated } from '@react-spring/web'
 
 interface IProps{
   children: ReactNode
@@ -6,9 +7,24 @@ interface IProps{
 
 
 export const Layout = (props: IProps) => {
+  const [motionState] = useSpring(
+    () => ({
+      from: { opacity: 0,},
+      config:{
+        duration:800
+      },
+      to: { opacity: 1 },
+      
+    }),
+    []
+  )
+
   return (
+    
     <div className='container mx-auto'>
-        {props.children}
+      <animated.div style={motionState}>
+          {props.children}
+      </animated.div>
     </div>
   )
 }
