@@ -13,7 +13,6 @@ export const QuizList = () => {
         {Quizes.map((elemet)=> 
           <QuizItem tittle={elemet.QuizTitle}  image={elemet.url_image} key={elemet.id} />
         )}
-
     </ul>
   )
 }

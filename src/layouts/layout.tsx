@@ -11,7 +11,7 @@ export const Layout = (props: IProps) => {
     () => ({
       from: { opacity: 0,},
       config:{
-        duration:800
+        duration:300
       },
       to: { opacity: 1 },
       
