@@ -3,6 +3,8 @@ import { MainContent } from "./components/main-content"
 import { useState } from "react"
 import { QuizWrapper } from "./components/quiz-container"
 
+
+//Add Github integration
 const  App = () => {
 const [isOpenQuiz, ToggleQuiz] = useState(true);
 
