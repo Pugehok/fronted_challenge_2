@@ -10,7 +10,7 @@ export const QuizWrapper = () => {
                 </div>
                 {/* Progress bar */}
                 <div className=''>
-                    <div className={`h-1 bg-green-300 rounded-xl p`} style={{width: '80%'}}></div>
+                    <div className={`h-1 w-[25%] bg-green-300 rounded-xl p`}></div>
                 </div>
                 {/* Variant Answers list */}
                 <div className=' flex flex-col align-middle w-full'>

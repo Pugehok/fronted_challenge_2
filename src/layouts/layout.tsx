@@ -9,9 +9,9 @@ interface IProps{
 export const Layout = (props: IProps) => {
   const [motionState] = useSpring(
     () => ({
-      from: { opacity: 0,},
+      from: { opacity: 0},
       config:{
-        duration:300
+        duration:800
       },
       to: { opacity: 1 },
       
@@ -20,7 +20,6 @@ export const Layout = (props: IProps) => {
   )
 
   return (
-    
     <div className='container mx-auto'>
       <animated.div style={motionState}>
           {props.children}

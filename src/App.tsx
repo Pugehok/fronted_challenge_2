@@ -6,7 +6,7 @@ import { QuizWrapper } from "./components/quiz-container"
 
 //Add Github integration
 const  App = () => {
-const [isOpenQuiz, ToggleQuiz] = useState(true);
+const [isOpenQuiz, ToggleQuiz] = useState(false)
   return (
     <>
           <Layout>
