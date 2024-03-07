@@ -9,5 +9,9 @@ export const useQuiz = () => {
     setOpenQuiz(id);
   };
 
-  return { isOpenQuiz, idOpenQuiz, setOpennedId };
+  const closer = () => {
+    toggleOpenQuiz(false)
+  }
+
+  return { isOpenQuiz, idOpenQuiz, setOpennedId, closer };
 };
