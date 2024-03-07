@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAnswer } from "../../hooks/useAnswer";
-
+import { AnswerItem } from "../answers-item";
 type props = {
   quiz_id: number;
 };
@@ -10,13 +10,13 @@ export const QuizWrapper = (props: props) => {
     setData,
     maxStep,
     currentQuestion,
-    questionList,
     handleAnswer,
   } = useAnswer();
 
   useEffect(() => {
     setData(props.quiz_id);
   }, [props.quiz_id]);
+
   return (
     <div className="flex h-screen align-middle justify-center">
       <div className="flex flex-col w-1/2  m-auto text-center  bg-primary-purple rounded-xl p-4">
@@ -36,18 +36,9 @@ export const QuizWrapper = (props: props) => {
         {/* Variant Answers list */}
         <div className=" flex flex-col align-middle w-full">
           <ul className="space-y-8 text-center p-4 mt-6 ">
-            <li
-              className="text-black  bg-white py-8 rounded-xl cursor-pointer transition-colors duration-150 hover:bg-green-100"
-              onClick={() => handleAnswer(1)}
-            >
-              <span className="xl:text-3xl">It's programming language</span>
-            </li>
-            <li className="text-black  bg-white py-8 rounded-xl cursor-pointer transition-colors duration-150 hover:bg-green-100">
-              <span className="xl:text-3xl">It's programming language</span>
-            </li>
-            <li className="text-black  bg-white py-8 rounded-xl cursor-pointer transition-colors duration-150 hover:bg-green-100">
-              <span className="xl:text-3xl">It's programming language</span>
-            </li>
+            {currentQuestion?.answers.map((element, index)=>{
+                return <AnswerItem index={index} handler={handleAnswer} text={element}/>
+            })} 
           </ul>
         </div>
       </div>

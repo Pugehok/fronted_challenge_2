@@ -28,6 +28,7 @@ export const useAnswer = () => {
   };
 
   const handleAnswer = (answer: number): void => {
+    // console.log(`${answer} - вы нажали на кнопку с индексом`)
     setCurrentQuestion(questionList[currentStep+1]);
     nextStep(currentStep + 1);
     setAnswers(() => [...userAnswers, answer]);
