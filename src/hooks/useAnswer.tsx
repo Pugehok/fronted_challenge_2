@@ -1,34 +1,51 @@
 import { useState } from "react";
 import { QuizDB } from "../constants/QuizList";
 
-interface IQuizes {
+interface Questions {
   id: number;
-  question_title: string;
+  title: string;
   answers: Array<string>;
   correct: number;
 }
 
+interface Quiz {
+  id: number;
+  Quizes: Array<Questions>;
+}
+
 export const useAnswer = () => {
   const [currentStep, nextStep] = useState(0);
-  const [maxStep, setMaxStep] = useState(0);
-  const [answers, setAnswers] = useState(Array<number>);
-  const [correctAnswers, setCorrectAnswers] = useState(Array<number>);
-  const [questionList, setQuestionList] = useState(Array<any>);
+  const [userAnswers, setAnswers] = useState<number[]>([]);
+  const [correctAnswers, setCorrectAnswers] = useState<number[]>([]);
+  const [questionList, setQuestionList] = useState<Questions[]>([]);
+  const [currentQuestion, setCurrentQuestion] = useState<Questions>();
 
   const setData = (id: number): void => {
-    const data = QuizDB[id];
-    console.log(data.Quizes.length);
-    setMaxStep(data.Quizes.length);
+    const data: Quiz = QuizDB[id];
     setCorrectAnswers(getCorrectAnswers(data.Quizes));
+    setQuestionList(data.Quizes);
+    setCurrentQuestion(data.Quizes[0]);
   };
 
-  const getCorrectAnswers = (data: Array<IQuizes>) => {
-    const correct = data.map((quiz: IQuizes) => {
-      return quiz.correct;
-    });
-    console.log(correct);
-    return correct;
+  const handleAnswer = (answer: number): void => {
+    setCurrentQuestion(questionList[currentStep+1]);
+    nextStep(currentStep + 1);
+    setAnswers(() => [...userAnswers, answer]);
   };
 
-  return { setData, maxStep, correctAnswers };
+  const getCorrectAnswers = (data: Array<Questions>) => {
+   return data.map((quiz: Questions) => {
+        return quiz.correct;
+   })
+};
+
+  return {
+    setData,
+    userAnswers,
+    maxStep: questionList.length,
+    currentQuestion,
+    correctAnswers,
+    questionList,
+    handleAnswer,
+  };
 };

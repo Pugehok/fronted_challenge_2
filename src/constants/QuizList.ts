@@ -31,7 +31,7 @@ export interface IQuiz {
 
 export interface IQuestions {
   id: number;
-  question_title: string;
+  title: string;
   answers: Array<string>;
   correct: number;
 }
@@ -42,7 +42,7 @@ export const QuizDB: Array<IQuiz> = [
     Quizes: [
       {
         id: 0,
-        question_title: "Че тактое HTML",
+        title: "Че тактое HTML",
         answers: [
           "Язык программирования",
           "Язык гипер-разметки",
@@ -52,7 +52,7 @@ export const QuizDB: Array<IQuiz> = [
       },
       {
         id: 1,
-        question_title: "Че такое прототип",
+        title: "Че такое прототип",
         answers: ["Один", "Два", "Правильно"],
         correct: 2,
       },
@@ -63,7 +63,7 @@ export const QuizDB: Array<IQuiz> = [
     Quizes: [
       {
         id: 0,
-        question_title: "Че тактое JS",
+        title: "Че тактое JS",
         answers: [
           "Язык программирования",
           "Язык гипер-разметки",
@@ -73,7 +73,7 @@ export const QuizDB: Array<IQuiz> = [
       },
       {
         id: 1,
-        question_title: "Че такое прототип",
+        title: "Че такое прототип",
         answers: ["Один", "Два", "Правильно"],
         correct: 2,
       },
