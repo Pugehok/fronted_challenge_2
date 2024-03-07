@@ -15,7 +15,6 @@ export const QuizMenu = (props: props) => {
       </div>
       <div className="pb-4">
         {/* Pages block after */}
-        <span className="text-white text-2xl">1 / 10</span>
       </div>
     </div>
   );

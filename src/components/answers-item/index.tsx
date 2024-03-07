@@ -9,11 +9,11 @@ interface props {
 export const AnswerItem = (props: props) => {
   const [motionState] = useSpring(
     () => ({
-      from: { opacity: 0, x: -100 },
+      from: { opacity: 0, },
       config: {
-        duration: 200,
+        duration: 400,
       },
-      to: { opacity: 1, x: 0 },
+      to: { opacity: 1,},
     }),
     [],
   );
