@@ -1,19 +1,24 @@
-import React from "react";
-import { QuizDB } from "../../constants/QuizList";
+import { useEffect } from "react";
+import { useAnswer } from "../../hooks/useAnswer";
 
 type props = {
   quiz_id: number;
 };
 
 export const QuizWrapper = (props: props) => {
-  console.log(QuizDB[props.quiz_id]);
+  const { setData, maxStep, correctAnswers } = useAnswer();
+
+  useEffect(() => {
+    setData(props.quiz_id);
+  }, [props.quiz_id]);
+
   return (
     <div className="flex h-screen align-middle justify-center">
       <div className="flex flex-col  m-auto text-center  bg-primary-purple rounded-xl p-4">
         {/* Tittle Block */}
         <div className="bg-second-purle rounded-xl p-8 w-full align-middle items-center justify-center bg-accent-blue">
           <span className="xl:text-5xl font-normal text-white">
-            How is JavaScript?
+            {[correctAnswers]}
           </span>
         </div>
         {/* Progress bar */}

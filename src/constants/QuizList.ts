@@ -24,12 +24,12 @@ export const QuizList: Array<IQuizList> = [
   },
 ];
 
-interface IQuiz {
+export interface IQuiz {
   id: number;
   Quizes: Array<IQuestions>;
 }
 
-interface IQuestions {
+export interface IQuestions {
   id: number;
   question_title: string;
   answers: Array<string>;

@@ -1,4 +1,3 @@
-import React from "react";
 import { QuizItem } from "../quiz-item";
 import { QuizList as Quizes } from "../../constants/QuizList";
 
