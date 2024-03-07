@@ -5,7 +5,7 @@ export const useQuiz = () => {
   const [isOpenQuiz, toggleOpenQuiz] = useState(false);
 
   const setOpennedId = (id: number) => {
-    toggleOpenQuiz(true);
+    toggleOpenQuiz(!isOpenQuiz);
     setOpenQuiz(id);
   };
 

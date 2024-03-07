@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState } from "react";
 import { QuizDB } from "../constants/QuizList";
 
 interface Questions {
@@ -14,39 +14,46 @@ interface Quiz {
 }
 
 export const useAnswer = () => {
-  const [currentStep, nextStep] = useState(0);
-  const [userAnswers, setAnswers] = useState<number[]>([]);
   const [correctAnswers, setCorrectAnswers] = useState<number[]>([]);
   const [questionList, setQuestionList] = useState<Questions[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState<Questions>();
+  const [step, nextStep] = useState(0);
 
-  const setData = (id: number): void => {
+  const getCorrectAnswers = (data: Array<Questions>) => {
+    return data.map((quiz: Questions) => {
+      return quiz.correct;
+    });
+  };
+  
+  
+  const getQuizes = (id: number): void => {
     const data: Quiz = QuizDB[id];
     setCorrectAnswers(getCorrectAnswers(data.Quizes));
     setQuestionList(data.Quizes);
     setCurrentQuestion(data.Quizes[0]);
   };
 
-  const handleAnswer = (answer: number): void => {
-    // console.log(`${answer} - вы нажали на кнопку с индексом`)
-    setCurrentQuestion(questionList[currentStep+1]);
-    nextStep(currentStep + 1);
-    setAnswers(() => [...userAnswers, answer]);
+  const handleAnswer = (): void => {
+    nextStep(step + 1);
+    setCurrentQuestion(questionList[step + 1]);
   };
 
-  const getCorrectAnswers = (data: Array<Questions>) => {
-   return data.map((quiz: Questions) => {
-        return quiz.correct;
-   })
-};
+  const userCorrect = (userAnswers: Array<number>): number => {
+    let counter = 0;
+    for (let i = 0; i < userAnswers.length; i++) {
+      if(userAnswers[i] == correctAnswers[i]) counter++;
+    }
+    return counter
+  };
+
 
   return {
-    setData,
-    userAnswers,
+    getQuizes,
     maxStep: questionList.length,
     currentQuestion,
     correctAnswers,
     questionList,
     handleAnswer,
+    userCorrect,
   };
 };
