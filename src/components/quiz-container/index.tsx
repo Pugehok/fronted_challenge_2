@@ -62,7 +62,7 @@ export const QuizWrapper = (props: props) => {
       ) : (
         <>
           <div className="flex h-screen align-middle justify-center">
-            <div className="flex flex-col w-1/2  m-auto text-center  bg-primary-purple rounded-xl p-4">
+            <div className="flex flex-col md:mx-8   m-auto text-center  bg-primary-purple rounded-xl p-4">
               <div className="bg-second-purle rounded-xl p-8 w-full align-middle items-center justify-center bg-main-purple">
                 <span className="xl:text-2xl font-normal text-white">
                   Поздравляем, вы успешно закончили тест! 🥂
@@ -72,7 +72,7 @@ export const QuizWrapper = (props: props) => {
                 {userCorrect(userAnswers) ? (
                   <>
                     <li className="text-white w-full  bg-green-500  py-8 shadow-xl rounded-lg whitespace-pre-line">
-                      <span className=" xl:text-2xl font-bold">
+                      <span className="w-fu xl:text-2xl font-bold">
                          {`Отличный результат!\nТы ответил на ${userCorrect(userAnswers)} из ${maxStep} вопрсов правильно! 🥳`}
                       </span>
                     </li>

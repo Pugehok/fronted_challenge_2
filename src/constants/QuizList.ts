@@ -222,7 +222,7 @@ export const QuizDB: Array<IQuiz> = [
       },
       {
         id: 4,
-        title: "Как устанавливается отступ между элементами в CSS?",
+        title: "Как устанавливается отступ внутри элемента в CSS?",
         answers: ["margin", "spacing", "padding"],
         correct: 2,
       },
@@ -248,11 +248,11 @@ export const QuizDB: Array<IQuiz> = [
         id: 8,
         title: "Как изменить размер текста в CSS?",
         answers: ["font-size", "text-size", "size"],
-        correct: 2,
+        correct: 0,
       },
       {
         id: 9,
-        title: "Как установить полужирное начертание текста в CSS?",
+        title: "Как установить жирное начертание текста в CSS?",
         answers: ["font-weight: bold", "text-bold: true", "bold: yes"],
         correct: 0,
       },
