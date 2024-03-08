@@ -73,7 +73,7 @@ export const QuizWrapper = (props: props) => {
                   <>
                     <li className="text-white w-full  bg-green-500  py-8 shadow-xl rounded-lg whitespace-pre-line">
                       <span className=" xl:text-2xl font-bold">
-                         {`Отличный результат!\nТы ответил на ${userCorrect(userAnswers)} из ${maxStep} вопрсов правильно!`}
+                         {`Отличный результат!\nТы ответил на ${userCorrect(userAnswers)} из ${maxStep} вопрсов правильно! 🥳`}
                       </span>
                     </li>
                       <button onClick={()=>props.closer()} className="text-white  bg-main-purple  p-8 shadow-xl rounded-lg whitespace-pre-line transition-colors duration-300 hover:bg-primary-purple">Вернуться на главную страницу</button>
